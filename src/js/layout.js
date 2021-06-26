@@ -4,10 +4,16 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
+
+import { Characters } from "./views/characters";
+import { Vehicles } from "./views/vehicles";
+import { Planets } from "./views/planets";
+
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
+import { Card } from "./component/card";
 import { Footer } from "./component/footer";
 
 //create your first component
@@ -25,12 +31,19 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/demo">
-							<Demo />
+
+						<Route exact path="/characters">
+							<Characters />
 						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
+
+						<Route exact path="/vehicles">
+							<Vehicles />
 						</Route>
+
+						<Route exact path="/planets">
+							<Planets />
+						</Route>
+
 						<Route>
 							<h1>Not found!</h1>
 						</Route>

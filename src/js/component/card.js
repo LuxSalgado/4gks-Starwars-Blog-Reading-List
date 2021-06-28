@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 export const Card = props => (
-	<div className="card mb-3" style={{ width: "16rem" }}>
+	<div className="card my-3 mx-3" style={{ width: "14rem" }}>
 		<img
 			className="card-img-top"
 			src="https://cdn.pixabay.com/photo/2015/08/28/14/54/lagoon-911963__180.jpg"

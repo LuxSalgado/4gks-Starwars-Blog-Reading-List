@@ -17,7 +17,7 @@ export const Characters = () => {
 	}, []);
 
 	return (
-		<div className="container d-flex justify-content-between">
+		<div className="container d-flex flex-wrap">
 			{personajesRecibidos.map((item, index) => {
 				return (
 					<Card key={index} title={item.name} /> //agregar el texto key

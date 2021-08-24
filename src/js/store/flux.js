@@ -1,6 +1,9 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			characters: [],
+			vehicles: [],
+			planets: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -16,6 +19,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
+			fetchCharacters: () => {
+				fetch("https://www.swapi.tech/api/people/", {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(res => res.json())
+					//.then(data => console.log("---DATA---", data.results));
+					.then(data => setStore({ characters: data.results }));
+			},
+			fetchVehicles: () => {},
+			fetchPlanets: () => {},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},

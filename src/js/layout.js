@@ -55,4 +55,4 @@ const Layout = () => {
 	);
 };
 
-export default injectContext(Layout);
+export default injectContext(Layout); //Está envolviendo a mi Layout, es decir, a mi aplicación

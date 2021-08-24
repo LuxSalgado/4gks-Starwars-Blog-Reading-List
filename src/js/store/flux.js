@@ -20,7 +20,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			// Use getActions to call a function within a fuction
 			fetchCharacters: () => {
-				fetch("https://www.swapi.tech/api/people/", {
+				fetch("https://swapi.dev/api/people/", {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json"
@@ -31,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ characters: data.results }));
 			},
 			fetchVehicles: () => {
-				fetch("https://www.swapi.tech/api/vehicles/", {
+				fetch("https://swapi.dev/api/vehicles/", {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json"
@@ -41,7 +41,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ vehicles: data.results }));
 			},
 			fetchPlanets: () => {
-				fetch("https://www.swapi.tech/api/planets/", {
+				fetch("https://swapi.dev/api/planets/", {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json"

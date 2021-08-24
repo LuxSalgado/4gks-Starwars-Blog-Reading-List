@@ -20,12 +20,14 @@ export const Planets = () => {
 	}, []); */
 
 	return (
-		<div className="container d-flex flex-wrap">
-			{store.planets.map((item, index) => {
-				return (
-					<Card key={index} title={item.name} /> //agregar el texto key
-				);
-			})}
+		<div className="container">
+			<div className="overflow-auto row flex-row flex-nowrap">
+				{store.planets.map((item, index) => {
+					return (
+						<Card key={index} title={item.name} /> //agregar el texto key
+					);
+				})}
+			</div>
 		</div>
 	);
 };

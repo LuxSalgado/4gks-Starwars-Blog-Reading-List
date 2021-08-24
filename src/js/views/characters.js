@@ -20,12 +20,14 @@ export const Characters = () => {
 	}, []); */
 
 	return (
-		<div className="container d-flex flex-wrap">
-			{store.characters.map((item, index) => {
-				return (
-					<Card key={index} title={item.name} /> //agregar el texto key
-				);
-			})}
+		<div className="container">
+			<div className="overflow-auto row flex-row flex-nowrap">
+				{store.characters.map((item, index) => {
+					return (
+						<Card key={index} title={item.name} /> //agregar el texto key
+					);
+				})}
+			</div>
 		</div>
 	);
 };

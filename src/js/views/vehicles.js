@@ -26,12 +26,15 @@ export const Vehicles = () => {
 	}, []); */
 
 	return (
-		<div className="container d-flex flex-wrap">
-			{store.vehicles.map((item, index) => {
-				return (
-					<Card key={index} title={item.name} /> //agregar el texto key
-				);
-			})}
+		<div className="container">
+			{/* <div className="container d-flex flex-wrap"> */}
+			<div className="overflow-auto row flex-row flex-nowrap">
+				{store.vehicles.map((item, index) => {
+					return (
+						<Card key={index} title={item.name} /> //agregar el texto key
+					);
+				})}
+			</div>
 		</div>
 	);
 };

@@ -30,8 +30,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 					//.then(data => console.log("---DATA---", data.results));
 					.then(data => setStore({ characters: data.results }));
 			},
-			fetchVehicles: () => {},
-			fetchPlanets: () => {},
+			fetchVehicles: () => {
+				fetch("https://www.swapi.tech/api/vehicles/", {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(res => res.json())
+					.then(data => setStore({ vehicles: data.results }));
+			},
+			fetchPlanets: () => {
+				fetch("https://www.swapi.tech/api/planets/", {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(res => res.json())
+					.then(data => setStore({ planets: data.results }));
+			},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},

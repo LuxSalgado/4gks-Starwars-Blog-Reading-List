@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import "../../styles/home.scss";
 import { Card } from "../component/card";
+import { Context } from "../store/appContext";
 
 export const Characters = () => {
-	const [personajesRecibidos, setPersonajesRecibidos] = useState([]);
+	const { store, actions } = useContext(Context);
+	/* const [personajesRecibidos, setPersonajesRecibidos] = useState([]);
 
 	const listaPersonajes = () => {
 		fetch("https://swapi.dev/api/people/?page=2", {
@@ -14,11 +17,11 @@ export const Characters = () => {
 
 	useEffect(() => {
 		listaPersonajes();
-	}, []);
+	}, []); */
 
 	return (
 		<div className="container d-flex flex-wrap">
-			{personajesRecibidos.map((item, index) => {
+			{store.characters.map((item, index) => {
 				return (
 					<Card key={index} title={item.name} /> //agregar el texto key
 				);

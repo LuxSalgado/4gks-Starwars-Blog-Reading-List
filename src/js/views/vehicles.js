@@ -1,28 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import "../../styles/home.scss";
 import { Card } from "../component/card";
-
+import { Context } from "../store/appContext";
 /* export const Vehicles = () => {
 	return <h1>Vehiculos</h1>;
 }; */
 
 export const Vehicles = () => {
-	const [vehiculosRecibidos, setVehiculosRecibidos] = useState([]);
+	const { store, actions } = useContext(Context);
 
-	const listaVehiculos = () => {
+	//const [vehiculosRecibidos, setVehiculosRecibidos] = useState([]); ---> No se utiliza
+
+	//API Fetch anterior a Flux
+	/* const listaVehiculos = () => {
 		fetch("https://swapi.dev/api/vehicles/?page=2", {
 			method: "GET"
 		})
 			.then(response => response.json())
 			.then(data => setVehiculosRecibidos(data.results));
-	};
+	}; */
 
-	useEffect(() => {
+	//UseEffect anterior a Flux
+	/* useEffect(() => {
 		listaVehiculos();
-	}, []);
+	}, []); */
 
 	return (
 		<div className="container d-flex flex-wrap">
-			{vehiculosRecibidos.map((item, index) => {
+			{store.vehicles.map((item, index) => {
 				return (
 					<Card key={index} title={item.name} /> //agregar el texto key
 				);

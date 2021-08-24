@@ -9,6 +9,8 @@ export const Home = () => {
 
 	useEffect(() => {
 		actions.fetchCharacters();
+		actions.fetchVehicles();
+		actions.fetchPlanets();
 	}, []);
 
 	return (
@@ -18,6 +20,8 @@ export const Home = () => {
 				<img src={rigoImage} />
 			</p>
 			<p>{JSON.stringify(store.characters)}</p>
+			<p>{JSON.stringify(store.vehicles)}</p>
+			<p>{JSON.stringify(store.planets)}</p>
 			<a href="#" className="btn btn-success">
 				If you see this green button, bootstrap is working
 			</a>

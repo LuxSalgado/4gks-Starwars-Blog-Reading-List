@@ -16,9 +16,9 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Lista de favoritos de StarWars</h1>
+			<h1 className="text-white">Lista de favoritos de StarWars</h1>
 			<div className="container my-2 border rounded">
-				<h3>Personajes</h3>
+				<h3 className="text-white">Personajes</h3>
 				<div className="overflow-auto row flex-row flex-nowrap">
 					{store.characters.map((item, index) => {
 						return (
@@ -28,7 +28,7 @@ export const Home = () => {
 				</div>
 			</div>
 			<div className="container my-2 border rounded">
-				<h3>Vehículos</h3>
+				<h3 className="text-white">Vehículos</h3>
 				<div className="overflow-auto row flex-row flex-nowrap">
 					{store.vehicles.map((item, index) => {
 						return (
@@ -38,7 +38,7 @@ export const Home = () => {
 				</div>
 			</div>
 			<div className="container my-2 border rounded">
-				<h3>Planetas</h3>
+				<h3 className="text-white">Planetas</h3>
 				<div className="overflow-auto row flex-row flex-nowrap">
 					{store.planets.map((item, index) => {
 						return (
@@ -50,8 +50,8 @@ export const Home = () => {
 			{/* <p>{JSON.stringify(store.characters)}</p>
 			<p>{JSON.stringify(store.vehicles)}</p>
 			<p>{JSON.stringify(store.planets)}</p> */}
-			<a href="#" className="btn btn-success">
-				If you see this green button, bootstrap is working
+			<a href="#" className="btn btn-info">
+				Top
 			</a>
 		</div>
 	);

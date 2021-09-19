@@ -14,9 +14,12 @@ export const Card = props => (
 				Some quick example text to build on the card title and make up the bulk of the cards content.
 			</p>
 		</div>
-		<div className="card-footer d-flex flex-column align-items-center">
+		<div className="card-footer d-flex justify-content-around">
 			<a href="#" className="btn btn-primary">
 				Find Out More!
+			</a>
+			<a href="#" className="btn btn-outline-warning">
+				<i className="fa fa-heart text-warning" />
 			</a>
 		</div>
 	</div>

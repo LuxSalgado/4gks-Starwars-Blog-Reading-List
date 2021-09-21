@@ -4,6 +4,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			vehicles: [],
 			planets: [],
+			favorites: [
+				{ nombre: "luis" },
+				{ nombre: "fabian" },
+				{ nombre: "fernando" },
+				{ nombre: "roberto" },
+				{ nombre: "antonio" },
+				{ nombre: "victor" },
+				{ nombre: "wilmer" },
+				{ nombre: "tereso" }
+			],
 			demo: [
 				{
 					title: "FIRST",
@@ -50,13 +60,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(res => res.json())
 					.then(data => setStore({ planets: data.results }));
 			},
+			eliminarFavorito: favoritos => {
+				setStore({ favorites: favoritos });
+				console.log("Ojo con esto ------> " + JSON.stringify(favoritos));
+			},
+			agregarFavorito: nuevoFav => {
+				//setStore({favorites.push({ nombre: nuevoFav })});
+				console.log("Ojo con esto ------> " + JSON.stringify(nuevoFav));
+			},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
 			},
 			changeColor: (index, color) => {
 				//get the store

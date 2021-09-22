@@ -6,42 +6,62 @@ export const Card = props => {
 	const { store, actions } = useContext(Context);
 
 	function agregar(nombre) {
-		actions.agregarFavorito(nombre);
+		let aux = store.favorites;
+		actions.agregarFavorito(nombre, aux);
 	}
 
 	return (
 		<div className="card my-3 mx-3 col-3" /* style={{ width: "50rem" }} */>
-			<img
-				className="card-img-top"
-				src="https://cdn.pixabay.com/photo/2015/08/28/14/54/lagoon-911963__180.jpg"
-				alt="Card image cap"
-			/>
+			<img className="card-img-top" src={props.imagen} alt="Card image cap" />
 			<div className="card-body d-flex flex-column align-items-center">
 				<h5 className="card-title">{props.title}</h5>
 				<p className="card-text">
-					Some quick example text to build on the card title and make up the bulk of the cards content.
+					{props.campoUno}
+					{props.descUno}
+				</p>
+				<p className="card-text">
+					{props.campoDos}
+					{props.descDos}
+				</p>
+				<p className="card-text">
+					{props.campoTres}
+					{props.descTres}
 				</p>
 			</div>
 			<div className="card-footer d-flex justify-content-around">
 				<a href="#" className="btn btn-info">
 					Más Información
 				</a>
-				<button
-					type="button"
-					className="btn btn-outline-warning ml-2"
-					onClick={() => {
-						agregar(props.title);
-					}}>
-					<i className="fa fa-heart text-warning" />
-				</button>
+				{
+					<button
+						type="button"
+						className={`btn btn-outline-warning ml-2 text-warning buttonFav ${
+							store.favorites.some(function(o) {
+								return o["nombre"] === props.title;
+							})
+								? "invisible"
+								: ""
+						}`}
+						onClick={() => {
+							agregar(props.title);
+						}}>
+						<i className="fas fa-star" />
+					</button>
+				}
 			</div>
 		</div>
 	);
 };
 
 Card.propTypes = {
-	url: PropTypes.string,
+	imagen: PropTypes.string,
 	title: PropTypes.string,
+	campoUno: PropTypes.string,
+	campoDos: PropTypes.string,
+	campoTres: PropTypes.string,
+	descUno: PropTypes.string,
+	descDos: PropTypes.string,
+	descTres: PropTypes.string,
 	content: PropTypes.string,
 	link: PropTypes.string
 };

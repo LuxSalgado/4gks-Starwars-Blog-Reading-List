@@ -16,7 +16,7 @@ export const Navbar = () => {
 	}
 
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light bg-light mb-3 sticky-top">
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1">Star Wars Database</span>
 			</Link>
@@ -49,7 +49,7 @@ export const Navbar = () => {
 								return (
 									<li
 										key={index}
-										className="dropdown-item d-flex justify-content-between align-items-center seleccionar">
+										className="dropdown-item d-flex justify-content-between align-items-center seleccionar lista">
 										<p className="my-2">{name.nombre}</p>
 										<button
 											type="button"

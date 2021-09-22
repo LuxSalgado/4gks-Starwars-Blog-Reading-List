@@ -4,16 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			vehicles: [],
 			planets: [],
-			favorites: [
-				{ nombre: "luis" },
-				{ nombre: "fabian" },
-				{ nombre: "fernando" },
-				{ nombre: "roberto" },
-				{ nombre: "antonio" },
-				{ nombre: "victor" },
-				{ nombre: "wilmer" },
-				{ nombre: "tereso" }
-			],
+			favorites: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -62,11 +53,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			eliminarFavorito: favoritos => {
 				setStore({ favorites: favoritos });
-				console.log("Ojo con esto ------> " + JSON.stringify(favoritos));
+				//console.log("Ojo con esto ------> " + JSON.stringify(favoritos));
 			},
-			agregarFavorito: nuevoFav => {
-				//setStore({favorites.push({ nombre: nuevoFav })});
-				console.log("Ojo con esto ------> " + JSON.stringify(nuevoFav));
+			agregarFavorito: (nuevoFav, favoritos) => {
+				let aux = [...favoritos, { nombre: nuevoFav }];
+				setStore({ favorites: aux });
+				//console.log("Ojo con esto ------> " + JSON.stringify(aux));
 			},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

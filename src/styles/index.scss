@@ -5,7 +5,9 @@ body {
     background-size: cover;
     -o-background-size: cover;
   }
-
+.invisible {
+visibility: hidden;
+}
 .hide { /*Para ocultar el botón*/
     color: white;
 }
@@ -23,4 +25,12 @@ body {
     display: block;
     color: red;
 }
-  
+.buttonFav:hover { 
+    background-color: #ffc107;
+}
+.buttonFav:hover i{
+    color: white;
+}
+.lista:active { 
+    background-color: white; 
+}

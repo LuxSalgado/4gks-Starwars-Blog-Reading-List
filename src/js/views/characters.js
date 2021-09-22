@@ -20,7 +20,8 @@ export const Characters = () => {
 	}, []); */
 
 	return (
-		<div className="container">
+		<div className="container my-2 border rounded">
+			<h3 className="text-white text-center">Personajes</h3>
 			<div className="overflow-auto row flex-row flex-nowrap">
 				{store.characters.map((item, index) => {
 					return (

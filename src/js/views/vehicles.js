@@ -26,7 +26,8 @@ export const Vehicles = () => {
 	}, []); */
 
 	return (
-		<div className="container">
+		<div className="container my-2 border rounded">
+			<h3 className="text-white text-center">Vehículos</h3>
 			{/* <div className="container d-flex flex-wrap"> */}
 			<div className="overflow-auto row flex-row flex-nowrap">
 				{store.vehicles.map((item, index) => {

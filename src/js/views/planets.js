@@ -20,7 +20,8 @@ export const Planets = () => {
 	}, []); */
 
 	return (
-		<div className="container">
+		<div className="container my-2 border rounded">
+			<h3 className="text-white text-center">Planetas</h3>
 			<div className="overflow-auto row flex-row flex-nowrap">
 				{store.planets.map((item, index) => {
 					return (
